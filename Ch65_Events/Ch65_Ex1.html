@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<title>Ch65 Exercise 1</title>
+	</head>
+	<body bgcolor="#ffffff">
+		<table border="0" cellpadding="5" width="100%">
+			<tr>
+				<td>
+					<hr color="#990000" size="0">
+					<br>
+					<center>
+						<h2><font color="#990000">Chapter 65 - Mouse, Keyboard, and Focus Events</font></h2>
+					</center>
+					<br>
+					<h3>Exercise - Clickable Dice</h3>
+					<h4>Background:</h4>
+					<p>Information and example concerning the creation of Mouse, Keyboard and Focus 
+						Listeners are available in <a href="http://java.sun.com/docs/books/tutorial/index.html" target="_blank">
+							Sun's Java Tutorial</a>. You should read this material prior to completing 
+						this exercise. Please refer to the following sections of the tutorial:</p>
+					<ul>
+						<li>
+							<a href="http://java.sun.com/docs/books/tutorial/uiswing/events/mouselistener.html"
+								target="_blank">How to Write a Mouse Listener</a>
+						<li>
+							<a href="http://java.sun.com/docs/books/tutorial/uiswing/events/mousemotionlistener.html"
+								target="_blank">How to Write a Mouse-Motion Listener</a>
+						<li>
+							<a href="http://java.sun.com/docs/books/tutorial/uiswing/events/keylistener.html" target="_blank">
+								How to Write a Key Listener</a>
+						<li>
+							<a href="http://java.sun.com/docs/books/tutorial/uiswing/events/focuslistener.html"
+								target="_blank">How to Write a Focus Listener</a></li>
+					</ul>
+					<h4>Assignment:</h4>
+					<p>Write an application that shows a pair of dice. When the user clicks on the 
+						application window, the dice should be rolled (that is, the dice should be 
+						assigned newly computed random values). In addition, the application should 
+						also be able to respond to keyboard input. When the application has the input 
+						focus, it should be highlighted with a colored border, and the dice should be 
+						rolled whenever the user presses a key on the keyboard. This is in addition to 
+						rolling them when the user clicks the mouse on the application. Here is an 
+						applet that solves this exercise:</p>
+					<p align="center"><APPLET height="100" width="100" code="ClickableDice2.class"> </APPLET>
+					<p>The application must be declared to "<tt>implement MouseListener</tt>", and it 
+						must define the <tt>mousePressed()</tt> method to roll the dice. (The other 
+						methods of the <tt>MouseListener</tt> interface will be empty.) The appropriate 
+						constructor must call <tt>addMouseListener(this)</tt> to register the panel to 
+						listen for mouse events on itself. For example,&nbsp; the <tt>mousePressed()</tt>
+						routine is defined simply as:</p>
+					<blockquote>
+						<pre>public void mousePressed(MouseEvent evt)
+{
+    roll();
+}</pre>
+					</blockquote>
+					<p>The application also has to handle key presses, so it must implement the <tt>KeyListener</tt>
+						interface, and it must register itself to listen for key events by calling <tt>addKeyListener()</tt>
+						when it is constructed. The <tt>keyPressed()</tt> method just has to roll the 
+						dice, by calling the same <tt>roll()</tt> subroutine that is used by the <tt>mousePressed()</tt>
+						routine.</p>
+					<p>The border around the dice changes from blue to red when the dice panel has the 
+						input focus. In order to implement this, the application must process focus 
+						events. So it needs to implement the <tt>FocusListener</tt> interface and 
+						register itself to listen for focus events. A boolean-valued instance variable, <tt>
+							focussed</tt>, is set to true when the applet gains the focus and to false 
+						when the application loses the focus.</p>
+					<p>There is one thing that is easy to forget: On some platforms, an application 
+						does not automatically receive the input focus when the user clicks on it. It 
+						has to request the focus by calling the <tt>requestFocus()</tt> method. This is 
+						done in the <tt>mousePressed()</tt> routine, in response to a mouse click on 
+						the dice panel area. If you forget this, your application will work on some 
+						platforms, but on others it will never get the input focus and the keyboard 
+						will never work</p>
+					<p>A template application is provided which contains everything necessary for this
+					   application except the event handling code.</p>
+					<hr color="#990000" size="0">
+					<h3><b>End of Exercise</b></h3>
+					&nbsp;
+					<hr color="#990000" size="0">
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,2 @@
+* #1 and * #2, and the end of line for *
+work for *. No more *...the end of *!

@@ -1,0 +1,10 @@
+publicclassJavaSource
+{
+publicstaticvoidmain(String[]args)
+{
+if(args.length==3)
+newObject();
+else
+System.out.println("Toofewarguments.");
+}
+}
